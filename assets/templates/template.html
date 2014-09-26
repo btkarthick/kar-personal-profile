@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Personal Profile</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<base href="<?php echo $SCHEME.'://'.$HOST.':'.$PORT.$BASE.'/'; ?>" />
+		<link href="assets/css/global.css" rel="stylesheet" />
+	</head>
+	
+	<body>
+	
+		<div id="divWrap">
+		
+		<!-- Left Nav Starts  -->	
+				<div class="divNav">
+				<div class="divMobNav">
+					<img src="assets/images/mobNavImg.png" alt="Nav Icon" />
+				</div>
+
+				<div class="divLftNav">
+							<div class="divLftNavCtc">
+								<p>connect me in</p>
+								<img src="assets/images/linkedInIcon.png" alt="Linkedin Icon" /><img src="assets/images/mailToIcon.png" alt="Mail Icon" />
+							</div>
+
+					<ul>
+						<li><a href="#whoAmI">who am I</a></li>
+						<li><a href="#myProfile">my profile</a></li>
+						<li><a href="#myPortfolio">my portfolio</a></li>
+						<li><a href="#myAchievements">my achievements</a></li>
+						<li><a href="#myInterest">my interest</a></li>
+						<li><a href="#communityServices">community service</a></li>
+						<li><a href="#uploadDocuments">upload documents</a></li>
+					</ul>
+				</div>
+				</div>
+			<!--End of Left Nav-->
+			
+			<!--Main content Starts-->
+			
+			
+			<div class="divRhtSec">
+			
+				<div class="divContent">
+				
+					<include href="{{ @content }}" />
+	
+				</div>
+			
+				<div style="clear:both;"></div>
+			
+			</div>
+			
+			
+			
+			<!--End of Main content-->
+
+			
+			
+			
+		</div>	
+	
+	</body>
+</html>	
+	
+	
