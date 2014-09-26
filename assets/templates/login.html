@@ -1,16 +1,21 @@
 	<div class="divCtnt">
 	<h3>Login</h3>
+		 <div style="color:red;">{{@loign_error}}</div>
+		<form name="frmLogin" action="" method="POST" id="frmLogin">
+		
 		<div class="labelUserName">
 			<span>user name</span>
-			<input type="textbox" />
+			<input type="textbox" name="username" id="username" />
 		</div>
 
 		<div class="labelPassword">
 			<span>password</span>
-			<input type="password" />
+			<input type="password" name="pwd" id="pwd" value="" />
 		</div>
 		<div class="labelBtn">
-			<input type="image" src="assets/images/loginBtn.jpg" alt="browse" />
+			<input type="image" src="assets/images/loginBtn.jpg" name="submit" alt="browse" />
 
 		</div>
+		
+		</form>
 	</div>

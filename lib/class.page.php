@@ -30,14 +30,44 @@
 	 
 	 function setLogin($f3){
 		 
-		 new Session();
-
-		$f3->set('SESSION.test',false);
-		echo $f3->get('SESSION.test');
+		global $db;
+		 /*$f3->set('SESSION.test',"1234");
+		echo $f3->get('SESSION.test');*/
+		 
+		 $f3->set("loign_error" , null);
+		 
+		if(!empty($f3->get('POST.username')) && !empty($f3->get('POST.pwd')))
+		{
+			$rows = $db->exec('SELECT * FROM users '.'WHERE username="'.$f3->get('POST.username').'"');
+			
+			if(!empty($rows))
+			{
+					
+			}
+			
+			else
+			 $f3->set("loign_error" , "Invalid username or password");
+			
+		}
+		 
+		$f3->set('content','templates/login.html');
+		 
+		$template=new Template;
+		 
+		echo $template->render('templates/template.html');
+	 }
+	 
+	 
+	 function setEncryptPassword($f3){
+		 
+		 $crypt = \Bcrypt::instance();
+		 
+		 $pwd  = "music123";
+		 
+		 echo $crypt->hash($pwd);
+		 
 		 
 	 }
-	 	 
+	
  } 
-
-
 ?>
