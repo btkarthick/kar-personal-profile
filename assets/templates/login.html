@@ -1,7 +1,7 @@
 	<div class="divCtnt">
 	<h3>Login</h3>
-		 <div style="color:red;">{{@loign_error}}</div>
-		<form name="frmLogin" action="" method="POST" id="frmLogin">
+		 <div id="error" style="color:red;">{{ @loign_error }}</div>
+		<form name="frmLogin" action="" method="POST" id="frmLogin" onsubmit="return loginFn.validateLogin();">
 		
 		<div class="labelUserName">
 			<span>user name</span>
@@ -16,6 +16,6 @@
 			<input type="image" src="assets/images/loginBtn.jpg" name="submit" alt="browse" />
 
 		</div>
-		
+		<input type="hidden" name="login" value="submit" />
 		</form>
 	</div>

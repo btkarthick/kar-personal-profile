@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<base href="<?php echo $SCHEME.'://'.$HOST.':'.$PORT.$BASE.'/'; ?>" />
 		<link href="assets/css/global.css" rel="stylesheet" />
+		<script src="assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
 	</head>
 	
 	<body>
@@ -15,33 +16,41 @@
 		<!-- Left Nav Starts  -->	
 				<div class="divNav">
 				<div class="divMobNav">
-					<!--<img src="assets/images/mobNavImg.png" alt="Nav Icon" />-->
+					<check if="{{ @loggedIn }}">
+						<img src="assets/images/mobNavImg.png" alt="Nav Icon" />
+					</check>	
 				</div>
 
-				<div class="divLftNav">
-							<!--<div class="divLftNavCtc">
-								<p>connect me in</p>
-								<img src="assets/images/linkedInIcon.png" alt="Linkedin Icon" /><img src="assets/images/mailToIcon.png" alt="Mail Icon" />
+						<div class="divLftNav">
+						
+							<check if="{{ @loggedIn }}">
+								
+							<div class="divLftNavCtc">
+							<p>connect me in</p>
+							<img src="assets/images/linkedInIcon.png" alt="Linkedin Icon" /><img src="assets/images/mailToIcon.png" alt="Mail Icon" />
 							</div>
 
-					<ul>
-						<li><a href="#whoAmI">who am I</a></li>
-						<li><a href="#myProfile">my profile</a></li>
-						<li><a href="#myPortfolio">my portfolio</a></li>
-						<li><a href="#myAchievements">my achievements</a></li>
-						<li><a href="#myInterest">my interest</a></li>
-						<li><a href="#communityServices">community service</a></li>
-						<li><a href="#uploadDocuments">upload documents</a></li>
-					</ul>-->
-				</div>
+									<ul>
+										<li><a href="page/aboutme">who am I</a></li>
+										<li><a href="page/portfolio">my portfolio</a></li>
+										<li><a href="page/achievements">my achievements</a></li>
+										<li><a href="page/curriculum">my curriculam</a></li>
+										<li><a href="page/interest">my interest</a></li>
+										<li><a href="page/services">community service</a></li>
+										<li><a href="logout">logout</a></li>
+									</ul>
+								
+							</check>	
+							
+						</div>
 				</div>
 			<!--End of Left Nav-->
 			
 			<!--Main content Starts-->
 			
 			
-			<div class="divRhtSec">
-			
+			<div class="divLoginRhtSec">
+		
 				<div class="divContent">
 				
 					<include href="{{ @content }}" />
@@ -59,7 +68,9 @@
 			
 			
 			
-		</div>	
+		</div>
+		
+		<script src="assets/js/global.js" type="text/javascript"></script>	
 	
 	</body>
 </html>	

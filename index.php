@@ -1,11 +1,12 @@
 <?PHP
 
-	require_once('lib/class.page.php');
+	require_once('D:\Karthick\Development\lib\class.page.php');
 
-	$f3 = require('lib/base.php');
+	$f3 = require('D:\Karthick\Development\lib\base.php');
 
-	require_once('lib/config.php');
+	require_once('D:\Karthick\Development\lib\config.php');
 	
+		
 	$f3->run();
 
 ?>
