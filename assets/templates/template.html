@@ -6,73 +6,35 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<base href="<?php echo $SCHEME.'://'.$HOST.':'.$PORT.$BASE.'/'; ?>" />
 		<link href="assets/css/global.css" rel="stylesheet" />
-		<script src="assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+		<script src="assets/js/jquery-1.11.1.min.js"></script>
+		
+		<check if="{{ @isLightbox }}">
+			<link rel="stylesheet" type="text/css" href="assets/css/lightBox.css">
+			<script src="assets/js/jquery.colorbox-min.js"></script>
+		</check>
 	</head>
 	
 	<body>
-	
 		<div id="divWrap">
-		
-		<!-- Left Nav Starts  -->	
-				<div class="divNav">
-				<div class="divMobNav">
-					<check if="{{ @loggedIn }}">
-						<img src="assets/images/mobNavImg.png" alt="Nav Icon" />
-					</check>	
-				</div>
+			
+			<include href="templates/nav.html" if="{{ @loggedIn }}" />
 
-						<div class="divLftNav">
-						
-							<check if="{{ @loggedIn }}">
-								
-							<div class="divLftNavCtc">
-							<p>connect me in</p>
-							<img src="assets/images/linkedInIcon.png" alt="Linkedin Icon" /><img src="assets/images/mailToIcon.png" alt="Mail Icon" />
-							</div>
-
-									<ul>
-										<li><a href="page/aboutme">who am I</a></li>
-										<li><a href="page/portfolio">my portfolio</a></li>
-										<li><a href="page/achievements">my achievements</a></li>
-										<li><a href="page/curriculum">my curriculam</a></li>
-										<li><a href="page/interest">my interest</a></li>
-										<li><a href="page/services">community service</a></li>
-										<li><a href="logout">logout</a></li>
-									</ul>
-								
-							</check>	
-							
-						</div>
-				</div>
-			<!--End of Left Nav-->
-			
-			<!--Main content Starts-->
+			<div class="graphBG"></div>
 			
 			
-			<div class="divLoginRhtSec">
-		
+			<div class="divRhtSec">
 				<div class="divContent">
-				
 					<include href="{{ @content }}" />
-	
 				</div>
-			
+				
 				<div style="clear:both;"></div>
+			</div>	
 			
-			</div>
-			
-			
-			
-			<!--End of Main content-->
+			<include href="templates/footer.html" if="{{ @loggedIn }}" />
 
-			
-			
-			
 		</div>
-		
-		<script src="assets/js/global.js" type="text/javascript"></script>	
-	
+		<script>
+			var isLogged = "{{ @loggedIn }}";
+		</script>
+		<script src="assets/js/global.js" type="text/javascript"></script>
 	</body>
-</html>	
-	
-	

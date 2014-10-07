@@ -8,7 +8,26 @@
 	
 	
 	g.emptyUserName = "Please enter username";
+	
 	g.emptyPassword = "Please enter password";
+	
+	g.colorBoxOptions = {width : "900px" , height : "600px" , photo : true , rel : "default" , transition:"none"}
+	
+	g.init = function(){
+		
+		if($(window).width() <= 1100){
+			
+			$('.mobNavImg').on("click"  , function(){
+
+				$('.navigation').slideToggle('fast');	
+				
+			});
+			
+		}
+		
+		
+		
+	}
 	
 	
 }(window.globalFn = window.globalFn || {}));
@@ -18,7 +37,15 @@
 
 (function (l){
 	
-	l.validateLogin = function(){
+	l.init = function(){
+		
+		if($("#frmLogin").length > 0)
+		{
+			$("#frmLogin").on("submit" , validateLogin);
+		}
+	};
+	
+	var validateLogin = function(){
 		
 		var username = $("#username").val();
 		var pass = $("#pwd").val();
@@ -43,9 +70,42 @@
 
 /*End of Login*/
 
+
+/*Achievements related functions*/
+
+(function (a){ 
+
+	
+	var linkList = ["curriculam_college" ,  "curriculam_hsc" ,  "curriculam_ssc" , "ecurriculam_college" , "ecurriculam_hsc" , "ecurriculam_ssc" ];
+	
+	
+	a.init = function(){
+		
+		if($("#my-achievements").length > 0)
+		{
+		
+			$.each(linkList , function(i,item){
+				
+				$("a." + item).colorbox(  $.extend(globalFn.colorBoxOptions , {rel : item})  );
+				
+			});
+			
+			
+		}
+		
+		
+	};
+
+}(window.achieveFn = window.achieveFn || {}));
+
+/*End of Achievements*/
+
+
 var onDocumentReady = function(){
 	
-	// Document Ready related functions goes here
+	globalFn.init();
+	loginFn.init();
+	achieveFn.init();
 };
 
 

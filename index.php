@@ -1,12 +1,9 @@
 <?PHP
 
-	require_once('D:\Karthick\Development\lib\class.page.php');
-
-	$f3 = require('D:\Karthick\Development\lib\base.php');
-
-	require_once('D:\Karthick\Development\lib\config.php');
+	define("DOCROOT" , "D:/Karthick/Development/Profile-Project/");
 	
-		
-	$f3->run();
+	$f3 = require(DOCROOT . 'profile_library/base.php');
 
-?>
+	require_once(DOCROOT . 'profile_library/config.php');
+	
+	$f3->run();

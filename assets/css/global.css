@@ -40,133 +40,167 @@ p, ul {
 li {
   list-style-type: none; }
 
-
-/* Template Styles */
-body {
-  width: 100%;
-  background: #fff;
+.clearBoth {
+clear: both;
 }
 
 #divWrap {
-  width: 100%;
+width: 100%;
 }
 
+.divHeader {
+width: 100%;
+background-color: #0073cb;
+position: fixed;
+z-index: 5;
+}
 
-/* Navigation Styles */
-.divNav {
-  width: auto;
-  position: relative; }
+.navigation {
+float: right;
+display: block;
+z-index: 5;
+}
 
-.divMobNav {
-	width: 50px;
-	height: 100%;
-	background: #0073cb;
-	position: fixed;
-	top: 0;
+.navigation ul {
+position: relative;
+border: none;
+}
+
+.navigation li, .navigation li a  {
+float: left;
+padding: 8px 20px;
+font-family: Trebuchet MS;
+font-weight: 17px;
+color: #fff;
+list-style-type: none;
+}
+
+.navigation li a:hover {
+background-color: #004478;
+}
+
+.navigation li:hover{
+background-color: #004478;
+}
+
+.navigation li.selected{ background-color: #004478; }
+
+.mobNavImg {
+float: right;
+display: none;
+cursor: pointer;
+}
+
+.mobNavImg img {
+margin-right: 20px;
+margin-top: 9px;
+}
+
+.navigationHide, .navigationShow{
+display:block;
+}
+
+@media screen and (max-width: 1100px) {
+	.navigation {
+	position: absolute;
 	left: 0;
-    display: none; }
+	right: 0;
+	width: 100%;
+	top: 35px;
+	height: 348px;
+	z-index: 5;
+	display: none;
+	}
+	.navigationShow{
+		display:block;
+		z-index: 5;
+	}
 	
-  .divMobNav img {
-    cursor: pointer;
-    padding: 20px 0 0 7px; }
+	.navigationHide{
+		display:none;
+		z-index: 5;
+	}
 	
-@media screen and (max-width: 800px) , screen and (max-height: 560px) {
-.divMobNav {
-display: block; }
-}
-	
-.divLftNav {
-  width: 250px;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #0073cb;
-  text-align: right;
-  overflow-y: auto;
-  display: block;}
-  
-@media screen and (max-width: 800px) , screen and (max-height: 560px) {
-.divLftNav {
-left: -250px; }
-}
-	
-  .divLftNav ul {
-    color: #fff;
-	margin-top: 10px;
-    display: block; }
-	
-  .divLftNav li {
-    margin: 10px 0 0 0;
-    padding: 10px 25px 10px 0; }
-	
-  .divLftNav li a{
-	width: 80%;
-    color: #fff; }
-	
-  .divLftNav li:hover {
-    background: #004478;
-    cursor: pointer; }
+	.navigation ul {
+	width: 100%;
+	}
 
-  .divLftNavCtc {
-	background: #4c5a65;
-	padding: 10px 0;
-	margin-top: 40px; }
-  
-  .divLftNavCtc p {
-    color: #fff;
-    padding-right: 25px; }
+	.navigation li {
+	width: 100%;
+	padding: 8px 0;
+	font-family: Trebuchet MS;
+	font-weight: 17px;
+	color: #fff;
+	list-style-type: none;
+	background-color: #0073cb;
+	border-top: 1px Solid #fff;
+	}
+	.navigation li  a{
+		width:80%;
+	}
 	
-  .divLftNavCtc img {
-    padding-right: 25px;
-    margin-top: 10px; }
+	.mobNavImg {
+	display: block;
+	}
+}
 
+@media screen and (min-width: 1101px) {
+	.navigation {
+		position: relative;
+		display: block;
+	}
+	.navigationHide, .navigationShow{
+		display:block;
+	}
+}
 
 /* Content Styles */
+.graphBG {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: url("../images/graphBG.png") repeat;
+  z-index: -1; 
+}
+
 .divRhtSec {
   width: 100%;
   height: 100%;
-  background: url("../images/graphBG.png") repeat;
-  z-index: 99; }
-
+  background: url("../images/bytesIMG.png") no-repeat left top; }
+  
 .divContent {
   width: 95%;
   height: 100%;
-  margin: 0 auto;
-  background: url("../images/bytesIMG.png") no-repeat left top; }
+  margin: 0 auto;}
   
-.divLoginRhtSec {
-  width: 100%;
-  height: 100%;
-  background: url("../images/graphBG.png") repeat;
-  position: fixed;
-  z-index: -1; }
-  
-.divLoginContent {
-  width: 95%;
-  height: 100%;
-  margin: 0 auto;
-  background: url("../images/bytesIMG.png") no-repeat left top; }
+.divLoginCtnt {
+width: 100%;
+text-align: center;
+padding-top: 100px;
+color: #758897;
+font-weight: regular;
+}
   
 .divCtnt {
 clear: both;
 width: auto;
-margin-left: 250px;}
+min-height: 600px;
+}
   
   .divCtnt h3 {
     clear: both;
     color: #758897;
     font-weight: regular;
-    padding-top: 40px; }
+    padding-top: 60px; }
 	
   .divCtnt h4 {
     clear: both;
     color: #758897;
     font-weight: regular;
-    margin-top: 15px; }
+    margin-top: 25px; }
 
   .labelUserName, .labelPassword {
-    margin-top: 20px;
+    margin-top: 10px;
 	color: #0073cb;}
 	
   .labelUserName span {
@@ -181,14 +215,14 @@ margin-left: 250px;}
   .labelPassword input {
 	width: 180px;}
 	
-  .labelBtn img{
-	margin-top: 20px;}
+  .errorLogin {
+  margin-top: 20px;
+  color: #ea0b0b;
+  font-size: 13px;
+  }
 	
-
- .labelBtn INPUT{
-	 padding-top: 20px;
- }	
-
+  .labelBtn INPUT{margin-top: 15px; margin-left: 17px;}
+	
   .divCtnt ul, .divCtnt ul.ulAttachments, .divCtnt ul.ulImages {
     clear: both; }
 	
@@ -206,46 +240,41 @@ margin-left: 250px;}
     float: left;
     margin-right: 20px;}
 
-@media screen and (max-width: 800px), screen and (max-height: 560px) {
-  .divCtnt {
-    margin-left: 50px; } 
-}
 
-.divCtnt a.college {
+.divCtnt a.college, .divCtnt a.HSC, .divCtnt a.SSC, .divCtnt a.extraCurriculum, ul.ulImages a.communityServices img {
 text-decoration: none;
 font-size: 20px;
 color: #0073cb;
 border: none;
 }
 
+p.textIndent{
+margin-left: 30px;
+}
+
 a.clear {
 clear: both;
 }
 
-.labelCategory, .labelUpload {
-font-size: 18px;
-color: #0073cb;
-margin-top: 20px;
+.divFooter {
+width: 100%;
+background: #2c3b46;
+text-align: center;
+margin-top: 25px;
 }
 
-.labelUpload {
-padding-bottom: 80px;
+.divFooter p {
+width: 90%;
+margin: 0 auto;
+padding-top: 10px;
+padding-bottom: 10px;
+color: #fff;
+text-align: center;
+font-size: 13px;
 }
 
-.labelCategory select {
-margin-left: 20px;
-}
-
-.labelTxt {
-float: left;
-}
-
-.labelTxt input {
-margin-left: 47px;
-width: 180px;
-}
-
-.browseBtn {
-float: left;
-margin-top: 2px;
+.divFooter img {
+padding-top: 10px;
+padding-left: 20px;
+padding-right: 20px;
 }

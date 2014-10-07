@@ -1,33 +1,113 @@
 <a class="clear" name="myAchievements"></a>
-			<div class="divCtnt">
+
+<div class="divCtnt" id="my-achievements">
 				<h3>my achievements</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget enim egestas nisl dignissim sagittis sit amet sed lacus. Praesent a commodo sapien. Phasellus iaculis elit nec eros ultrices, in volutpat lectus ultricies. Nunc elementum diam vehicula nibh volutpat laoreet. Etiam rutrum arcu nec orci ultrices, quis facilisis arcu rutrum. Nam posuere nec leo ac laoreet.</p>
 				
-				<p><a class="college" href="assets/certifications/college/1.jpg">college certificates</a></p>
-				<p><a class="college" href="assets/certifications/college/2.jpg"></a></p>
-				<p><a class="college" href="assets/certifications/college/3.jpg"></a></p>
-				<p><a class="college" href="assets/certifications/college/4.jpg"></a></p>
-				<p><a class="college" href="assets/certifications/college/5.jpg"></a></p>
-				<p><a class="college" href="assets/certifications/college/6.jpg"></a></p>
-				
-				<p><a class="college" href="assets/certifications/HSC/1.jpg">higher secondary certificates</a></p>
-				<p><a class="college" href="assets/certifications/HSC/2.jpg"></a></p>
-				<p><a class="college" href="assets/certifications/HSC/3.jpg"></a></p>
-				<p><a class="college" href="assets/certifications/HSC/4.jpg"></a></p>
-				<p><a class="college" href="assets/certifications/HSC/5.jpg"></a></p>
-				<p><a class="college" href="assets/certifications/HSC/6.jpg"></a></p>
-				
-				<p><a class="college" href="assets/certifications/SSC/1.jpg">senior secondary certificates</a></p>
-				<p><a class="college" href="assets/certifications/SSC/2.jpg"></a></p>
-				<p><a class="college" href="assets/certifications/SSC/3.jpg"></a></p>
-				<p><a class="college" href="assets/certifications/SSC/4.jpg"></a></p>
-				<p><a class="college" href="assets/certifications/SSC/5.jpg"></a></p>
-				<p><a class="college" href="assets/certifications/SSC/6.jpg"></a></p>
-				
-				<p><a class="college" href="assets/certifications/extraCurriculum/1.jpg">extra-curriculum Certificates</a></p>
-				<p><a class="college" href="assets/certifications/extraCurriculum/2.jpg"></a></p>
-				<p><a class="college" href="assets/certifications/extraCurriculum/3.jpg"></a></p>
-				<p><a class="college" href="assets/certifications/extraCurriculum/4.jpg"></a></p>
-				<p><a class="college" href="assets/certifications/extraCurriculum/5.jpg"></a></p>
-				<p><a class="college" href="assets/certifications/extraCurriculum/6.jpg"></a></p>				
+			<h4>curriculum</h4>
+			
+			<!--Curriculam College Section-->
+			<check if="{{ @curriculam_college }}">
+										
+					<repeat group="{{ @curriculam_college }}" value="{{ @cert }}" counter="{{ @ctr }}">
+						
+						<p class="{{ @ctr == 1  ? 'textIndent' : '' }}" >
+					
+									<a class="college curriculam_college" href="culam/college/{{ @cert.filename }}">
+										<check if="{{ @ctr == 1 }}">college certificates</check>
+									</a>
+						</p>
+				</repeat>	
+			</check>	
+			
+			<!--End of Curriculam College Section-->
+	
+		
+		   <!--Curriculam HSC Section-->
+			<check if="{{ @curriculam_hsc }}">
+										
+					<repeat group="{{ @curriculam_hsc }}" value="{{ @cert }}" counter="{{ @ctr }}">
+						
+						<p class="{{ @ctr == 1  ? 'textIndent' : '' }}" >
+					
+									<a class="college curriculam_hsc" href="culam/hsc/{{ @cert.filename }}">
+										<check if="{{ @ctr == 1 }}">higher secondary certificates</check>
+									</a>
+						</p>
+				</repeat>	
+			</check>	
+			
+			<!--End of Curriculam HSC Section-->
+	
+	
+			<!--Curriculam SSC Section-->
+			<check if="{{ @curriculam_ssc }}">
+										
+					<repeat group="{{ @curriculam_ssc }}" value="{{ @cert }}" counter="{{ @ctr }}">
+						
+						<p class="{{ @ctr == 1  ? 'textIndent' : '' }}" >
+					
+									<a class="college curriculam_ssc" href="culam/ssc/{{ @cert.filename }}">
+										<check if="{{ @ctr == 1 }}">senior secondary certificates</check>
+									</a>
+						</p>
+				</repeat>	
+			</check>	
+			
+			<!--End of Curriculam SSC Section-->			
+	
+			<h4>extra-curriculum</h4>
+	
+			<!-- Extra Curriculam College Section-->
+			<check if="{{ @ecurriculam_college }}">
+										
+					<repeat group="{{ @ecurriculam_college }}" value="{{ @cert }}" counter="{{ @ctr }}">
+						
+						<p class="{{ @ctr == 1  ? 'textIndent' : '' }}" >
+					
+									<a class="college ecurriculam_college" href="eculam/college/{{ @cert.filename }}">
+										<check if="{{ @ctr == 1 }}">college certificates</check>
+									</a>
+						</p>
+				</repeat>	
+			</check>	
+			
+			<!--End of Extra Curriculam College Section-->
+	
+	
+			<!-- Extra Curriculam HSC Section-->
+			<check if="{{ @ecurriculam_hsc }}">
+										
+					<repeat group="{{ @ecurriculam_hsc }}" value="{{ @cert }}" counter="{{ @ctr }}">
+						
+						<p class="{{ @ctr == 1  ? 'textIndent' : '' }}" >
+					
+									<a class="college ecurriculam_hsc" href="eculam/hsc/{{ @cert.filename }}">
+										<check if="{{ @ctr == 1 }}">higher secondary certificates</check>
+									</a>
+						</p>
+				</repeat>	
+			</check>	
+			
+			<!--End of Extra Curriculam HSC Section-->
+	
+	
+			 <!-- Extra Curriculam SSC Section-->
+			<check if="{{ @ecurriculam_ssc }}">
+										
+					<repeat group="{{ @ecurriculam_ssc }}" value="{{ @cert }}" counter="{{ @ctr }}">
+						
+						<p class="{{ @ctr == 1  ? 'textIndent' : '' }}" >
+					
+									<a class="college ecurriculam_ssc" href="eculam/ssc/{{ @cert.filename }}">
+										<check if="{{ @ctr == 1 }}">senior secondary certificates</check>
+									</a>
+						</p>
+				</repeat>	
+			</check>	
+			
+			<!--End of Extra Curriculam SSC Section-->
+	
+	
+						
 			</div>
